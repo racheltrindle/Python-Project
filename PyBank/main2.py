@@ -2,19 +2,17 @@ import os
 import csv 
 csvpath = os.path.join("budget_data.csv")
 with open (csvpath, newline="") as csvfile:
-    data = csv.reader(csvfile, delimiter=",")
     row_count = sum (1 for row in csvfile) - 1
-    print("Total Months: " + str(row_count))
-    
-    
-net_total = csv.reader(open("budget_data.csv","r"))
-next(net_total)
-numbers = (float(row[1]) for row in net_total)
-total = sum(numbers)
+    net_total = csv.reader(open("budget_data.csv","r"))
+    next(net_total)
+    numbers = (float(row[1]) for row in net_total)
+    total = sum(numbers)
+    ave_columns = ((total)/((86*2))/100)
 print ("Total: $" + str(total))
+print("Total Months: " + str(row_count))
+print (ave_columns)
 
-ave_change = int(total)/
-print (ave_change)   
+
 # total = 10000
 # print ("Total: $" + str(total))
 
