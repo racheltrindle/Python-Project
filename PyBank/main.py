@@ -2,10 +2,24 @@ import os
 import csv 
 csvpath = os.path.join("budget_data.csv")
 with open (csvpath, newline="") as csvfile:
-    value_sum=0
-    for row in csv.reader(csvfile, delimiter=","):
-        value_sum += row[2]
-            print (value_sum)
+    main_data = csv.reader(open("budget_data.csv","r"))
+    next(main_data)
+    
+    #count of rows
+    row_count = sum (1 for row in csvfile) - 1
+    
+    #sum of column
+    amounts_in_column = (float(row[1]) for row in main_data)
+    total = sum(amounts_in_column)
+    
+    #average changes between rows
+    #max change
+    #min change
+print ("Total: $" + str(total))
+print("Total Months: " + str(row_count))
+
+
+
 
 #The net total amount of "Profit/Losses" over the entire period
 # with open (budget_data.txt) as f:
