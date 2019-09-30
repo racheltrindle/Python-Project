@@ -6,9 +6,17 @@ with open (poll_data,newline='') as csvfile:
     csv_header=next(csvreader)
     for rows in csvreader:
         total_voters=sum(1 for row in csvfile)+1
-        print (total_voters)
+        print("Election Results")
+        print ("-------------------------")
+        print ("Total Votes: " + str(total_voters))
+        print("Khan:")
+        print("Correy:")
+        print("Li: ")
+        print ("O'Tooley: ")
+        print ("-------------------------")
+        print ("Winner: ")
         candidates = rows[2]
-        while rows[2]==rows[2]:
-            print (candidates)
-            StopIteration
+        # while rows[2]==rows[2]:
+        #     print (candidates)
+StopIteration
             
